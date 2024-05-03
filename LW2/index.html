@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Графический редактор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        #canvas {
+            border: 1px solid #ccc;
+            cursor: crosshair;
+            display: block;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #toolbar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #toolbar select,
+        #toolbar button {
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #1646b5;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #toolbar select {
+            margin-right: 10px;
+        }
+
+        #toolbar button {
+            margin-left: 10px;
+        }
+
+        #toolbar select:hover,
+        #toolbar button:hover {
+            background-color: #051064;
+        }
+
+        #toolbar select:focus,
+        #toolbar button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Графический редактор</h1>
+    <div id="canvas-container">
+        <canvas id="canvas" width="1400" height="500"></canvas>
+    </div>
+    <div id="toolbar">
+        <select id="curveType">
+            <option value="circle">Окружность</option>
+            <option value="ellipse">Эллипс</option>
+            <option value="hyperbola">Гипербола</option>
+            <option value="parabola">Парабола</option>
+        </select>
+        <button onclick="clearCanvas()">Очистить холст</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Графический редактор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 20vh;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        #toolbar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        #toolbar button {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: #4a50f5;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        #toolbar button:hover {
+            background-color: #042a6b;
+        }
+
+        #canvas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: crosshair;
+        }
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>Графический редактор</h1>
+
+    <div id="toolbar">
+        <button onclick="setAlgorithm('dda')">ЦДА</button>
+        <button onclick="setAlgorithm('bresenham')">Целочисленный Брезенхем</button>
+        <button onclick="setAlgorithm('wu')">Алгоритм Ву</button>
+        <button onclick="clearCanvas()">Очистить</button>
+    </div>
+
+    <canvas id="canvas" width="1400" height="600"></canvas>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
